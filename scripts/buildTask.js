@@ -10,7 +10,7 @@ const { readDir, writeDir } = require('../config/file.config.js')
 // 调用接口 获取数据
 function fetchData (dataUrl) {
   return axios.get(dataUrl).then((res) => {
-    return { data: res.data.data.list }
+    return { data: res.data }
   }).catch(err => {
     console.error(`获取数据失败：${err.msg}`)
   })
@@ -39,7 +39,9 @@ function buildTask (task) {
     // ejs渲染文件所在路径
     let fileName = path.join(writeDir, outputPath)
     // 渲染后的静态html字符串
-    let content = ejs.render(template, data)
+    let content = ejs.render(template, data, {
+      filename: fileName
+    })
     // 判断目录是否存在, 不存在则创建目录, 防止目录不存在报错
     let isExist = fs.existsSync(path.join(writeDir, dirName))
     if (!isExist) {

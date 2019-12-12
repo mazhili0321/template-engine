@@ -5,6 +5,6 @@
  */
 
 module.exports = {
-  readDir: 'template',
-  writeDir: 'views',
+  readDir: 'src/template',
+  writeDir: 'src/views',
 }

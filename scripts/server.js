@@ -16,3 +16,13 @@ app.get('/build', (req, res) => {
     res.status(hasError ? 500 : 200).send(JSON.stringify(results))
   })
 })
+
+// 以下为测试mock接口
+app.get('/searchData', (req, res) => {
+  let users = [
+    { name: '张三' },
+    { name: '李四' },
+    { name: '王五' },
+  ]
+  res.status(200).send(users)
+})
