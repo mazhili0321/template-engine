@@ -1,3 +1,3 @@
-# potato-template-node
+# template-engine
 
 generate static template by node server
