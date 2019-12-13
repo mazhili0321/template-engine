@@ -1,0 +1,15 @@
+[role="treeitem"][aria-level="1"]>a {
+  padding-left: 20px;
+}
+[role="treeitem"][aria-level="2"]>a {
+  padding-left: calc(20px + 16px * 1);
+}
+[role="treeitem"][aria-level="3"]>a {
+  padding-left: calc(20px + 16px * 2);
+}
+[role="treeitem"][aria-level="4"]>a {
+  padding-left: calc(20px + 16px * 3);
+}
+[aria-expanded="false"]>[role="group"] {
+  display: none;
+}

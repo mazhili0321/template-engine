@@ -39,9 +39,13 @@ function buildTask (task) {
     // ejs渲染文件所在路径
     let fileName = path.join(writeDir, outputPath)
     // 渲染后的静态html字符串
-    let content = ejs.render(template, data, {
-      filename: fileName
-    })
+    let content;
+    try{
+      content = ejs.render(template, data, { filename: fileName });
+    }catch(err){
+      console.log(err);
+      throw err;
+    }
     // 判断目录是否存在, 不存在则创建目录, 防止目录不存在报错
     let isExist = fs.existsSync(path.join(writeDir, dirName))
     if (!isExist) {

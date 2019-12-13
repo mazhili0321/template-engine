@@ -14,7 +14,7 @@ module.exports = {
     // }
     {
       templatePath: 'template.ejs',
-      dataUrl: 'http://127.0.0.1:8080/searchData',
+      dataUrl: 'http://127.0.0.1:8080/getData',
       status: ''
     }
   ]
